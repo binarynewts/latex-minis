@@ -1,0 +1,24 @@
+\newcounter{currprfstep}
+\newcounter{case}
+\newcounter{currcasestep}
+
+\newcommand*{\prfstart}{\setcounter{currprfstep}{1}\setcounter{case}{0}}
+\newcommand*{\prfstep}{
+    \ifnum\thecurrprfstep=1
+        \\~~\=(1)~~\=
+    \else
+        \\\> (\thecurrprfstep)\>
+    \fi
+    \stepcounter{currprfstep}
+}
+
+\newcommand*{\casestart}{\\[3ex]\stepcounter{case}\setcounter{currcasestep}{1}\textbf{Case \Roman{case}:}~}
+\newcommand*{\casestep}{
+    \ifnum\thecurrcasestep=1
+        \\\>\> (\Roman{case}.\thecurrcasestep)~~\=
+    \else
+        \\\>\> (\Roman{case}.\thecurrcasestep)\>
+    \fi
+    \stepcounter{currcasestep}
+}
+
