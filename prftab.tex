@@ -22,3 +22,5 @@
     \stepcounter{currcasestep}
 }
 
+\newcommand*{\caserefer}[1]{(\Roman{case}.\the\numexpr \value{currcasestep} - #1 \relax)}
+\newcommand*{\prfrefer}[1]{(\the\numexpr \value{currprfstep} - #1 \relax)}
