@@ -2,7 +2,8 @@
 \newcounter{case}
 \newcounter{currcasestep}
 
-\newcommand*{\prfstart}{\setcounter{currprfstep}{1}\setcounter{case}{0}}
+\newcommand*{\prfstart}{\begin{tabbing}\setcounter{currprfstep}{1}\setcounter{case}{0}}
+\newcommand{\prfend}{\end{tabbing}}
 \newcommand*{\prfstep}{
     \ifnum\thecurrprfstep=1
         \\~~\=(1)~~\=
@@ -24,3 +25,7 @@
 
 \newcommand*{\caserefer}[1]{(\Roman{case}.\the\numexpr \value{currcasestep} - #1 \relax)}
 \newcommand*{\prfrefer}[1]{(\the\numexpr \value{currprfstep} - #1 \relax)}
+
+% this is frivolous but i like it
+\newcommand*{\prfreason}{\\}
+\newcommand*{\casereason}{\\\>}

@@ -1,0 +1,54 @@
+\documentclass{article}
+\input{prftab}
+
+\begin{document}
+Wrap your proof in \verb|\prfstart| and \verb|\prfend|. Start each line with either \verb|\prfreason| to explain the reasoning for the steps, or \verb|\prfstep| to give a numbered step. Refer to prior steps using \verb|\prfrefer|
+
+Casing works the same as proofs, just replacing \verb|prf| with \verb|case| as needed (though you don't need to end your cases, just your proofs (starting a proof puts you in a tabbing environment)).
+
+\begin{verbatim}
+\prfstart
+\prfreason Because of reason,
+\prfstep This thing is true.
+\prfreason Because of the previous thing \prfrefer{1},
+\prfstep We can split into cases.
+%
+%
+\casestart The first case.
+\casereason Since I'm in this case,
+\casestep I can do this thing.
+%
+%
+\casestart The second case.
+\casereason Being here,
+\casestep This is true.
+\casereason Because \caserefer{1} and \prfrefer{1},
+\casestep Tada!
+%
+%
+\prfstep Maybe there are more things here now idk.
+\prfend
+\end{verbatim}
+
+\prfstart
+\prfreason Because of reason,
+\prfstep This thing is true.
+\prfreason Because of the previous thing \prfrefer{1},
+\prfstep We can split into cases.
+%
+%
+\casestart The first case.
+\casereason Since I'm in this case,
+\casestep I can do this thing.
+%
+%
+\casestart The second case.
+\casereason Being here,
+\casestep This is true.
+\casereason Because \caserefer{1} and \prfrefer{1},
+\casestep Tada!
+%
+%
+\prfstep Maybe there are more things here now idk.
+\prfend
+\end{document}
